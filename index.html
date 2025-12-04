@@ -36,14 +36,14 @@
             text-align: center;
             margin: 30px 0;
             padding: 20px 10px;
-            background-color: #ffe0b2; /* 淺橘色背景，更醒目 */
+            background-color: #ffe0b2; 
             border-radius: 10px;
             border: 2px dashed #ff5500;
         }
         .promo-button {
             display: inline-block;
             padding: 15px 30px;
-            background-color: #ff5500; /* Klook 紅色 */
+            background-color: #ff5500; 
             color: white;
             text-decoration: none;
             font-size: 1.5em;
@@ -75,9 +75,9 @@
             margin-top: 35px;
             margin-bottom: 25px;
             padding: 20px;
-            background-color: #f0f8ff; /* 淺藍色背景 */
+            background-color: #f0f8ff; 
             border-radius: 10px;
-            border-left: 5px solid #3897f0; /* 藍色邊線 */
+            border-left: 5px solid #3897f0; 
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
         .itinerary-day h3 {
@@ -88,16 +88,28 @@
         }
         .itinerary-content {
             color: #666;
-            min-height: 50px; /* 確保空白處有足夠高度 */
+            min-height: 50px; 
             font-style: italic;
         }
 
+        /* *** KLOOK 三欄排版樣式修改處 *** */
         #widget-container {
-            text-align: center;
+            display: flex; /* 啟用 Flexbox 排版 */
+            justify-content: space-around; /* 讓元件均勻分佈 */
+            flex-wrap: wrap; /* 允許換行 (手機上會自動變回單欄) */
+            gap: 15px; /* 元件之間的間距 */
             margin-top: 30px;
             padding-top: 20px;
             border-top: 1px dashed #ccc;
         }
+        .klook-item {
+            /* 讓每個小工具佔約 30% 寬度，確保三個可以並排 */
+            flex: 1 1 30%; 
+            min-width: 250px; /* 最小寬度限制 */
+            text-align: center;
+        }
+        /* ************************************ */
+
 
         .cta-text {
             font-weight: bold;
@@ -112,7 +124,7 @@
     <div class="container">
         
         <div class="promo-button-container">
-            <p class="promo-text">🎉 獨家優惠！點擊領取專屬 95 折折扣碼 🎉</p>
+            <p class="promo-text">🎉 點擊領取 95 折折扣碼 🎉</p>
             <a href="https://www.klook.com/zh-TW/coupons/?code=SKYNIKO" target="_blank" class="promo-button">
                 立即領取 95 折優惠
             </a>
@@ -135,7 +147,6 @@
                 <i>（請在此處填寫內容，例如：機場→飯店、外灘夜景等）</i>
             </div>
         </div>
-
         <div class="itinerary-day">
             <h3>📍 Day 2：經典與歷史</h3>
             <div class="itinerary-content">
@@ -176,20 +187,51 @@
         </p>
 
         <div id="widget-container">
-            <ins class="klk-aff-widget" 
-                 data-wid="75442" 
-                 data-adid="1172136" 
-                 data-actids="161740,141410,2128" 
-                 data-prod="mul_act" 
-                 data-price="false" 
-                 data-lang="" 
-                 data-width="160" 
-                 data-height="600" 
-                 data-currency="">
-                <a href="//www.klook.com/">Klook.com</a>
-            </ins>
+            <div class="klook-item">
+                <ins class="klk-aff-widget" 
+                     data-wid="75442" 
+                     data-adid="1172136" 
+                     data-actids="141410" 
+                     data-prod="mul_act" 
+                     data-price="false" 
+                     data-lang="" 
+                     data-width="100%" 
+                     data-currency="">
+                    <a href="//www.klook.com/">Klook.com</a>
+                </ins>
+                <p>樂園門票</p>
+            </div>
+            
+            <div class="klook-item">
+                <ins class="klk-aff-widget" 
+                     data-wid="75442" 
+                     data-adid="1172136" 
+                     data-actids="161740,2128" 
+                     data-prod="mul_act" 
+                     data-price="false" 
+                     data-lang="" 
+                     data-width="100%" 
+                     data-currency="">
+                    <a href="//www.klook.com/">Klook.com</a>
+                </ins>
+                <p>地標門票/交通卡</p>
+            </div>
+            
+            <div class="klook-item">
+                <ins class="klk-aff-widget" 
+                     data-wid="75442" 
+                     data-adid="1172136" 
+                     data-actids="2610,611" 
+                     data-prod="mul_act" 
+                     data-price="false" 
+                     data-lang="" 
+                     data-width="100%" 
+                     data-currency="">
+                    <a href="//www.klook.com/">Klook.com</a>
+                </ins>
+                <p>周邊一日遊</p>
+            </div>
         </div>
-        
         <script type="text/javascript">
             (function (d, sc, u) {
                 var s = d.createElement(sc),
